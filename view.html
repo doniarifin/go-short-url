@@ -1,0 +1,29 @@
+{{define "form"}}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>URL Shortener</title>
+    </head>
+    <body>
+      <h2>URL Shortener</h2>
+			<form method="post" action="/process">
+					<input type="text" name="url" placeholder="Enter a URL">
+					<input type="submit" value="Shorten">
+			</form>
+    </body>
+</html>
+{{end}}
+
+{{define "result"}}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>URL Shortener</title>
+    </head>
+    <body>
+      <h2>URL Shortener</h2>
+			<p>Original URL: {{ .originalURL }}</p>
+			<p>Shortened URL: <a href="{{ .shortUrl }}"> {{ .shortUrl }}</a></p>
+    </body>
+</html>
+{{end}}
