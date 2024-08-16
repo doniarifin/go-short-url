@@ -56,7 +56,7 @@ func (us *URLShortener) RouteSubmitPost(w http.ResponseWriter, r *http.Request) 
 	http.Error(w, "", http.StatusBadRequest)
 }
 
-func (us URLShortener) HandleRedirect(w http.ResponseWriter, r *http.Request) {
+func (us *URLShortener) HandleRedirect(w http.ResponseWriter, r *http.Request) {
 	shortKey := r.URL.Path[len("/short/"):]
 	if shortKey == "" {
 		http.Error(w, "short key is missing", http.StatusBadRequest)
